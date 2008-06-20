@@ -1,3 +1,5 @@
+# wsgi stub for django on app engine
+
 import logging, os
 
 # Google App Engine imports.
