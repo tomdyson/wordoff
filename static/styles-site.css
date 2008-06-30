@@ -23,10 +23,13 @@ body, h1, h2, h4, h5, h6,ol, ul, li, p, input, textarea, select {
 	font-size: 12px;
 }
 
-p a, .entry a {
+p, li {font-size: 12px;line-height: 16px;}
+
+p a, .entry a, li a {
 	color: #588E03;
 	border-bottom: 1px dotted #588E03;
-	text-decoration: none; }
+	text-decoration: none; 
+	}
 	
 #menu a {
 	color: brown;

@@ -2,6 +2,7 @@
 
 {% block content %}
 <p>
-	wordoff has an api
+	Use wordoff through its API by POSTing to the <strong>/api/clean</strong> method with a single <strong>html</strong> argument:
 </p>
+	<pre>curl -d html=&lt;Dirty HTML&gt; http://wordoff.org/api/clean</pre>
 {% endblock %}

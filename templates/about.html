@@ -2,12 +2,24 @@
 
 {% block content %}
 <p>
-	wordoff applies the following rules to strip the cruft that is pasted into 
-	wysiwyg editors from word:
+	Wordoff applies the following rules to strip the cruft that is pasted into 
+	WYSIWYG editors from Word:</p>
 	<ul>
-		<li>all attributes are removed</li>
-		<li>spans are removed</li>
-		<li>empty elements are removed</li>
+		<li>Attributes are removed for all elements except &lt;a&gt;s</li>
+		<li>&lt;span&gt;s and &lt;div&gt;s are removed</li>
+		<li>Empty elements are removed</li>
+		<li>Consecutive line breaks are reduced to two</li>
 	</ul>
+<p>
+	Wordoff is written in Python and runs on Django in Google App Engine. It was designed as a demonstration 
+	project for a short talk at <a href = "http://oxford.geeknights.net/2008/jun-25th/">Oxford Geek Nights</a>. 
+	The logo uses the <a href = "http://www.dafont.com/sketch-rockwell.font">Sketch Rockwell</a> font.
 </p>
+<p>
+	Please improve Wordoff:
+</p>
+<ul>
+	<li>Issues - <a href = "http://wordoff.lighthouseapp.com/projects/13552-wordoff/tickets/new">Wordoff @ Lighthouse</a></li>
+	<li>Git - <a href = "git://github.com/tomdyson/wordoff.git">git://github.com/tomdyson/wordoff.git</a></li>
+</ul>
 {% endblock %}

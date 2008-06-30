@@ -46,7 +46,7 @@ def superClean(str):
     clean = stripAttributes(str)
     cleaner = stripSpans(clean)
     cleaner = stripDivs(cleaner)
-    cleaner = xenophobia(cleaner)
+    #cleaner = xenophobia(cleaner)
     cleaner = stripEmptyElements(cleaner)
     cleaner = stripEmptyElements(cleaner)
     cleaner = stripEmptyElements(cleaner)
