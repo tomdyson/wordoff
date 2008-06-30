@@ -1,0 +1,56 @@
+body {text-align: center;}
+
+#container {
+	margin: 0 auto;
+	width: 600px;
+	text-align: left;
+	position: relative;
+	margin-top: 25px;
+}
+
+body, h1, h2, h4, h5, h6,ol, ul, li, p, input, textarea, select {
+	font-family: "Lucida Grande","Lucida Sans Unicode",geneva,verdana,sans-serif;
+	color: black;
+}
+
+#menu {
+/*  border: 1px dashed silver;*/
+/*  padding: 7px;
+    margin-top: 5px;
+    background-color: #f5f5f5;*/
+	text-align: left;
+	color: gray;
+	font-size: 12px;
+}
+
+p a, .entry a {
+	color: #588E03;
+	border-bottom: 1px dotted #588E03;
+	text-decoration: none; }
+	
+#menu a {
+	color: brown;
+	border-bottom: 1px dotted #588E03;
+	text-decoration: none; }
+	
+#headerimage {
+    position: absolute;
+    left: -220px;
+}
+
+div.grippie {
+	background:#EEEEEE url(/static/grippie.png) no-repeat scroll center 2px;
+	border-color:#DDDDDD;
+	border-style:solid;
+	border-width:0pt 1px 1px;
+	cursor:s-resize;
+	height:9px;
+	overflow:hidden;
+}
+
+.resizable-textarea textarea {
+	display:block;
+	margin-bottom:0pt;
+	width:95%;
+	height: 30%;
+}

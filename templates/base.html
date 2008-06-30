@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<title>WordOff</title>
+	<script type="text/javascript" src="/static/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/jquery.textarearesizer.compressed.js"></script>
+	<script type="text/javascript">
+		/* jQuery textarea resizer plugin usage */
+		$(document).ready(function() {
+			$('textarea.resizable:not(.processed)').TextAreaResizer();
+		});
+	</script>
+	<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/static/styles-site.css">
+</head>
+<body>
+	<div id="container">
+		<img id = "headerimage" src="/static/clean-water.gif" alt="Mes Roses" height="320" width="207" />
+			
+		<img src = "/static/wordoff-logo-only.gif" style = "margin-bottom:5px" />
+		
+		{% block content %}{% endblock %}
+		
+		<div id="menu">
+			<a href = "/">start</a> | 
+			<a href="/about">about</a> |
+			<a href="/api">api</a> |
+			<a href = "http://wordoff.lighthouseapp.com/projects/13552-wordoff/tickets/new">bugs</a> | 
+			&copy; <a href = "http://www.throwingbeans.org/">tom dyson</a> 2008
+		</div>
+		
+	</div>
+</body>
+</html>

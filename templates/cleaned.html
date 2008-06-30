@@ -1,40 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
-	"http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
-<head>
-	<title>WordOff</title>
-	<script type="text/javascript" src="/static/jquery.min.js"></script>
-	<script type="text/javascript" src="/static/jquery.textarearesizer.compressed.js"></script>
-	<script type="text/javascript">
-		/* jQuery textarea resizer plugin usage */
-		$(document).ready(function() {
-			$('textarea.resizable:not(.processed)').TextAreaResizer();
-		});
-	</script>
-	<style type="text/css">
-		div.grippie {
-			background:#EEEEEE url(/static/grippie.png) no-repeat scroll center 2px;
-			border-color:#DDDDDD;
-			border-style:solid;
-			border-width:0pt 1px 1px;
-			cursor:s-resize;
-			height:9px;
-			overflow:hidden;
-		}
-		.resizable-textarea textarea {
-			display:block;
-			margin-bottom:0pt;
-			width:95%;
-			height: 30%;
-		}
-	</style>
-	<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
-</head>
-<body>
+{% extends "base.html" %}
 
-<form action = "/clean" method = "post">
-	<textarea name = "html" class = "resizable" rows = "40">{{cleaned}}</textarea>
-</form>
-
-</body>
-</html>
+{% block content %}
+<textarea name = "html" class = "resizable" rows = "25">{{cleaned}}</textarea>
+{% endblock %}
