@@ -4,15 +4,22 @@
 import re
 import unicodedata
 
-match_attributes = re.compile(r'<([a-zA-Z]+[0-9]?) [^>]+>')
+match_tags_with_attributes = re.compile(r'<([a-zA-Z]+[0-9]?) [^>]+>')
 match_spans = re.compile(r'</?span[^>]*>')
 match_divs = re.compile(r'</?div[^>]*>')
 match_empty_elements = re.compile(r'<([a-zA-Z]+)>\s*</\1>')
 match_multiple_linebreaks = re.compile(r'(\n\s*){3,}')
 
+def ignore_some_tags(matchobj):
+    # don't strip attributes for <a>s
+    if matchobj.group(1) == 'a':
+        return matchobj.group(0)
+    else:
+        return '<%s>' % matchobj.group(1)
+
 def stripAttributes(str):
     # remove attributes from all tags
-    return match_attributes.sub(r'<\1>',str)
+    return match_tags_with_attributes.sub(ignore_some_tags,str)
 
 def stripSpans(str):
     # remove spans
@@ -33,7 +40,7 @@ def stripEmptyElements(str):
 def xenophobia(str):
     # convert everything to ascii
     utf8_string = str.decode('utf-8')
-    return unicodedata.normalize('NFKD', utf8_string).encode('iso-8859-1', 'ignore')
+    return unicodedata.normalize('NFKD', utf8_string).encode('ascii', 'ignore')
 
 def superClean(str):
     clean = stripAttributes(str)

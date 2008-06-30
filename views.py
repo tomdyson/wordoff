@@ -10,3 +10,14 @@ def clean(request):
     input = request.POST["html"]
     cleaned = superClean(input)
     return render_to_response('cleaned.html', locals())
+    
+def clean_api(request):
+    input = request.POST["html"]
+    cleaned = superClean(input)
+    return render_to_response('api.html', locals())
+    
+def about(request):
+    return render_to_response('about.html')
+    
+def about_api(request):
+    return render_to_response('about-api.html')
