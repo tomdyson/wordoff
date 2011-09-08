@@ -11,8 +11,8 @@ match_empty_elements = re.compile(r'<([a-zA-Z]+)>\s*</\1>')
 match_multiple_linebreaks = re.compile(r'(\n\s*){3,}')
 
 def ignore_some_tags(matchobj):
-    # don't strip attributes for <a>s
-    if matchobj.group(1) == 'a':
+    # don't strip attributes for <a>s or <img>s
+    if matchobj.group(1) in ['a','img']:
         return matchobj.group(0)
     else:
         return '<%s>' % matchobj.group(1)
