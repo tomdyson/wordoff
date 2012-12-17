@@ -4,7 +4,7 @@
 import re
 import unicodedata
 
-match_tags_with_attributes = re.compile(r'<([a-zA-Z]+[0-9]?) [^>]+>')
+match_tags_with_attributes = re.compile(r'<([a-zA-Z]+[0-9]?) ([^/>]*)(/?)>')
 match_spans = re.compile(r'</?span[^>]*>')
 match_divs = re.compile(r'</?div[^>]*>')
 match_empty_elements = re.compile(r'<([a-zA-Z]+)>\s*</\1>')
@@ -19,6 +19,8 @@ def ignore_some_tags(matchobj):
         return match_style_attributes.sub(' ', matchobj.group(0))
     # but strip all attibrutes for everything else
     else:
+        if matchobj.group(3): # preserve trailing slashes for void elements
+            return '<%s />' % matchobj.group(1)
         return '<%s>' % matchobj.group(1)
 
 
